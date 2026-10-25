@@ -1,0 +1,15 @@
+{
+  "javax.inject:javax.inject:1": {
+    "licenses": [
+      {
+        "name": "Apache License, Version 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "evidence": {
+      "url": "https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1-sources.jar",
+      "entry": "javax/inject/Inject.java",
+      "reason": "The version 1 Maven POM has no license field; its published Java source headers declare Apache-2.0."
+    }
+  }
+}

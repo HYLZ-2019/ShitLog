@@ -1,0 +1,97 @@
+[
+  {
+    "file": "licenses/JSON-java-20240303-LICENSE.txt",
+    "url": "https://api.github.com/repos/stleary/JSON-java/contents/LICENSE?ref=20240303",
+    "sha256": "86cc84f1773e3318ba26fd61b3ae508a167df38b361695e105f6e499e7a2736f"
+  },
+  {
+    "file": "licenses/gradle-9.3.1-NOTICE.txt",
+    "url": "https://services.gradle.org/distributions/gradle-9.3.1-bin.zip",
+    "archive_entry": "gradle-9.3.1/NOTICE",
+    "sha256": "c2de5fd9adc7ccc4e1382a0e1f38ec6e14f8ca6e28d3c20289fe80353b019aa1"
+  },
+  {
+    "file": "licenses/javax.inject-1-SOURCE-HEADER.txt",
+    "url": "https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1-sources.jar",
+    "archive_entry": "javax/inject/Inject.java",
+    "archive_sha256": "c4b87ee2911c139c3daf498a781967f1eb2e75bc1a8529a2e7b328a15d0e433e",
+    "sha256": "f41a532b1c445ab9c62cf862d5e419f76eff97f933355c553a797db9e809d8fb"
+  },
+  {
+    "file": "licenses/junit.junit-4.13.2-LICENSE-junit.txt",
+    "coordinate": "junit:junit:4.13.2",
+    "url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+    "archive_entry": "LICENSE-junit.txt",
+    "sha256": "9648bb2891b9813970bddb68d4be8a5e6ec8280d0180a53dfb29236b579c55bb"
+  },
+  {
+    "file": "licenses/merged-LICENSE-junit.txt",
+    "source": "Android debugAndroidTest merged Java resources",
+    "archive_entry": "LICENSE-junit.txt",
+    "sha256": "9648bb2891b9813970bddb68d4be8a5e6ec8280d0180a53dfb29236b579c55bb"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_annotation_annotation_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/annotation/annotation/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_collection_collection-ktx_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/collection/collection-ktx/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_collection_collection_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/collection/collection/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_lifecycle_lifecycle-common-java8_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/lifecycle/lifecycle-common-java8/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_lifecycle_lifecycle-common_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/lifecycle/lifecycle-common/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/merged-META-INF_androidx_room_room-common_LICENSE.txt",
+    "source": "Android debug merged Java resources",
+    "archive_entry": "META-INF/androidx/room/room-common/LICENSE.txt",
+    "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0"
+  },
+  {
+    "file": "licenses/org.hamcrest.hamcrest-core-1.3-LICENSE.txt",
+    "coordinate": "org.hamcrest:hamcrest-core:1.3",
+    "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+    "archive_entry": "LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "licenses/org.hamcrest.hamcrest-integration-1.3-LICENSE.txt",
+    "coordinate": "org.hamcrest:hamcrest-integration:1.3",
+    "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-integration/1.3/hamcrest-integration-1.3.jar",
+    "archive_entry": "LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "licenses/org.hamcrest.hamcrest-library-1.3-LICENSE.txt",
+    "coordinate": "org.hamcrest:hamcrest-library:1.3",
+    "url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar",
+    "archive_entry": "LICENSE.txt",
+    "sha256": "1cde867cab5c8e842929da5391cef98b4017314822270e934e8e2eef3767c666"
+  },
+  {
+    "file": "licenses/protobuf-upstream-BSD-3-Clause.txt",
+    "coordinate": "androidx.datastore:datastore-preferences-external-protobuf:1.1.7",
+    "url": "https://api.github.com/repos/protocolbuffers/protobuf/contents/LICENSE?ref=v3.25.5",
+    "note": "Upstream BSD-3-Clause license text; the datastore component POM declares BSD-3-Clause. This URL is a license source, not an assertion of its embedded protobuf version.",
+    "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+  }
+]

@@ -1,0 +1,48 @@
+# Machine configuration and generated files
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.idea/
+*.iml
+.android/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+
+# Local captures, emulator diagnostics, and delivery copies
+/captures/
+/dist/
+/docs/screenshots/current.png
+*.log
+*.hprof
+*.pcap
+*.pcapng
+*.har
+*.mitm
+
+# Signing material and credentials; never publish these
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+
+# Personal data and packaged applications
+/backups/
+/exports/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.apk
+*.aab

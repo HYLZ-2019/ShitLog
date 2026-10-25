@@ -1,0 +1,54 @@
+{
+  "format_version": 1,
+  "app_version": "0.1.0",
+  "exported_at": "2026-10-18T04:00:00Z",
+  "record_types": [
+    {"id": "bowel", "name": "排便", "enabled": true, "data_version": 1}
+  ],
+  "records": [
+    {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "type_id": "bowel",
+      "status": "completed",
+      "details_status": "completed",
+      "started_at_utc_ms": null,
+      "ended_at_utc_ms": null,
+      "event_local_date": "2026-10-17",
+      "zone_id": null,
+      "start_offset_seconds": null,
+      "end_offset_seconds": null,
+      "time_precision": "date",
+      "duration_ms": 180000,
+      "duration_source": "imported",
+      "time_review_required": false,
+      "note": "虚构示例：只有日期和时长的旧记录",
+      "created_at_utc_ms": 1792281600000,
+      "updated_at_utc_ms": 1792281600000,
+      "deleted_at_utc_ms": null
+    }
+  ],
+  "bowel_details": [
+    {
+      "record_id": "11111111-1111-4111-8111-111111111111",
+      "abdominal_pain": null,
+      "constipation": false,
+      "anal_pain": null,
+      "blood_excluding_menstruation": null,
+      "sticky_stool": null,
+      "stool_form_code": null,
+      "amount_code": "medium"
+    }
+  ],
+  "record_sources": [
+    {
+      "id": "22222222-2222-4222-8222-222222222222",
+      "record_id": "11111111-1111-4111-8111-111111111111",
+      "source": "legacy_example",
+      "source_record_id": "example-1",
+      "batch_id": null,
+      "raw_json": "{\"颜色\":\"黄褐色\",\"形状\":\"香蕉\"}",
+      "mapping_version": 1
+    }
+  ],
+  "import_batches": []
+}
