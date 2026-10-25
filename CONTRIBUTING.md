@@ -22,6 +22,7 @@
 
 ```powershell
 python scripts/check_repository.py
+python -m unittest discover -s scripts/tests -p "test_*.py"
 .\gradlew.bat :app:assembleDebug :app:testDebugUnitTest :app:lintDebug :app:assembleDebugAndroidTest --console=plain
 ```
 
@@ -29,4 +30,4 @@ Linux/macOS 将 `python` 换成 `python3`，将 `.\gradlew.bat` 换成 `./gradle
 
 PR 请说明问题、用户可见变化、验证结果和已知限制；视觉修改可附经检查的截图。依赖更新需核对传递依赖及许可，并更新第三方清单。单元测试应验证实际行为，不必为纯排版修改增加重复测试。
 
-现有 GitHub Actions 会检查仓库文件、构建、单元测试、Lint、设备测试编译和依赖许可清单；不会上传 APK、签名文件或健康数据。
+现有 GitHub Actions 会检查仓库文件、发布工具、构建、单元测试、Lint、设备测试编译和依赖许可清单。版本标签在上述检查通过后会构建并发布固定签名的 release 实验包、源码和校验值；普通提交和 PR 不发布 APK。不得提交或发布私钥、密码和健康数据，签名操作见 [签名说明](docs/SIGNING.md)。

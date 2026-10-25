@@ -2,7 +2,7 @@
 
 仅 Android 的本地生活记录应用，当前提供排便记录。首页一张拉屎卡片，一键开始、结束计时；支持 Bristol 七型、身体感受、月历、趋势，以及 JSON 备份恢复和 CSV 导出。
 
-**当前为 0.1.1 实验版。** 已有构建、单元测试与静态检查记录，设备完整流程和视觉验收尚未完成。请阅读 [验证记录与已知限制](docs/VERIFICATION.md)。
+**当前为 0.1.3 实验版，开始使用固定签名升级渠道。** 已有构建、单元测试与静态检查记录，设备完整流程和视觉验收尚未完成。请阅读 [验证记录与已知限制](docs/VERIFICATION.md)。
 
 项目原创代码和图形采用 [Apache-2.0](LICENSE)，第三方组件保留各自许可，见 [第三方说明](THIRD_PARTY_NOTICES.md)。
 
@@ -52,6 +52,12 @@ debug 包使用构建机器的调试签名。只有签名一致时才能直接�
 
 Windows 使用 `.\gradlew.bat`。`assembleDebugAndroidTest` 仅编译测试包，不代表设备流程通过。GitHub Actions 执行仓库文件检查、构建、单元测试、Lint、测试包编译和依赖许可清单检查，暂不运行模拟器。当前文档中的本机验证不能替代远程 CI 首次运行结果。
 
+## 自动发布与覆盖升级
+
+配置一次固定签名的 GitHub Actions Secrets 后，推送版本标签（如 `v0.1.3`）会在所有检查通过后自动发布签名 APK、源码 ZIP 和 SHA-256。普通提交和 PR 不发布。缺少密钥、签名指纹不符、版本标签不符或 `versionCode` 未递增都会阻止发布，不会换用默认 debug 签名。
+
+从旧 debug 包切换到首个固定签名版时，先导出 JSON、确认备份可恢复，再重装一次并导入。之后使用相同签名和更高版本号的 APK，可以直接覆盖升级保留记录。当前仍以 GitHub Pre-release 发布实验版。详见 [发布步骤](docs/RELEASING.md) 与 [签名和升级说明](docs/SIGNING.md)。
+
 ## 使用
 
 1. 打开首页，在拉屎卡片上点「开拉」。
@@ -93,6 +99,7 @@ Windows 使用 `.\gradlew.bat`。`assembleDebugAndroidTest` 仅编译测试包�
 - [贡献指南](CONTRIBUTING.md)：开发约定、数据兼容规则与提交前检查。
 - [安全与隐私报告](SECURITY.md)：避免在公开反馈中泄露健康记录或凭据。
 - [发布检查](docs/RELEASING.md)：首次公开、依赖清单和正式 APK 发布流程。
+- [固定签名与升级](docs/SIGNING.md)：一次性 Secrets 配置、密钥备份和旧包迁移。
 - [第三方许可与素材来源](THIRD_PARTY_NOTICES.md)：组件版本、许可及随包通知。
 
 提交前运行 `python scripts/check_repository.py`（Linux/macOS 为 `python3`），暂存后可加 `--staged` 检查准确的暂存内容。脚本不会读取被忽略的私人目录，只能辅助发现常见问题，仍需人工审查提交内容和截图。

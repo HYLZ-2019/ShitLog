@@ -23,6 +23,7 @@ __pycache__/
 *.mitm
 
 # Signing material and credentials; never publish these
+.signing/
 *.jks
 *.keystore
 *.p12

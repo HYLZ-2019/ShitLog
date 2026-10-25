@@ -10,7 +10,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 BLOCKED_DIRS = {
-    ".android", ".aws", ".gradle", ".idea", ".kotlin", ".ssh",
+    ".android", ".aws", ".gradle", ".idea", ".kotlin", ".signing", ".ssh",
     "__pycache__", "backups", "build", "captures", "dist", "exports",
 }
 BLOCKED_NAMES = {"local.properties", "key.properties", "keystore.properties"}

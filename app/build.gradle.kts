@@ -3,6 +3,19 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
 }
+
+val signingEnvironment = listOf(
+    "ANDROID_KEYSTORE_PATH", "ANDROID_KEYSTORE_PASSWORD", "ANDROID_KEY_ALIAS", "ANDROID_KEY_PASSWORD"
+).associateWith { providers.environmentVariable(it).orNull }
+val hasReleaseSigning = signingEnvironment.values.all { !it.isNullOrBlank() }
+val validateReleaseSigning = tasks.register("validateReleaseSigning") {
+    doLast {
+        val missing = signingEnvironment.filterValues { it.isNullOrBlank() }.keys
+        check(missing.isEmpty()) { "Fixed release signing is required. Missing: ${missing.joinToString()}" }
+        check(file(signingEnvironment.getValue("ANDROID_KEYSTORE_PATH")!!).isFile) { "Release keystore not found" }
+    }
+}
+
 android {
     namespace = "com.lunhui.log"
     compileSdk { version = release(36) { minorApiLevel = 1 } }
@@ -10,9 +23,26 @@ android {
         applicationId = "com.lunhui.log"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.1.1"
+        versionCode = 4
+        versionName = "0.1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("fixedRelease") {
+                storeType = "JKS"
+                storeFile = file(signingEnvironment.getValue("ANDROID_KEYSTORE_PATH")!!)
+                storePassword = signingEnvironment.getValue("ANDROID_KEYSTORE_PASSWORD")
+                keyAlias = signingEnvironment.getValue("ANDROID_KEY_ALIAS")
+                keyPassword = signingEnvironment.getValue("ANDROID_KEY_PASSWORD")
+            }
+        }
+    }
+    buildTypes {
+        getByName("release") {
+            isDebuggable = false
+            if (hasReleaseSigning) signingConfig = signingConfigs.getByName("fixedRelease")
+        }
     }
     buildFeatures { compose = true; buildConfig = true }
     compileOptions {
@@ -20,6 +50,9 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     testOptions { unitTests.isReturnDefaultValues = true }
+}
+tasks.matching { it.name == "preReleaseBuild" }.configureEach {
+    dependsOn(validateReleaseSigning)
 }
 ksp { arg("room.schemaLocation", "$projectDir/schemas") }
 dependencies {
